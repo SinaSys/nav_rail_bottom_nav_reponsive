@@ -9,7 +9,7 @@ class ProfileScreen extends StatelessWidget {
         alignment: Alignment.center,
         width: double.infinity,
         height: double.infinity,
-        color: Colors.redAccent,
+        color: Colors.greenAccent,
         child: const Text("Profile Screen",
             style: TextStyle(
                 fontSize: 25,

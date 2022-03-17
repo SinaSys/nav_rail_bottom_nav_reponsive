@@ -9,7 +9,7 @@ class SettingScreen extends StatelessWidget {
         alignment: Alignment.center,
         width: double.infinity,
         height: double.infinity,
-        color: Colors.redAccent,
+        color: Colors.blueAccent,
         child: const Text("Setting Screen",
             style: TextStyle(
                 fontSize: 25,

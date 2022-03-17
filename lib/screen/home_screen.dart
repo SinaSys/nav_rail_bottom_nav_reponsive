@@ -5,6 +5,7 @@ import 'package:nav_rail_bottom_nav_reponsive/screen/favorite_screen.dart';
 import 'package:nav_rail_bottom_nav_reponsive/screen/setting_screen.dart';
 import 'package:nav_rail_bottom_nav_reponsive/widgets/bottom_nav.dart';
 import 'package:nav_rail_bottom_nav_reponsive/widgets/nav_rail.dart';
+import 'package:nav_rail_bottom_nav_reponsive/widgets/tab_bar.dart';
 
 
 class HomeScreen extends StatelessWidget {
@@ -26,6 +27,8 @@ class HomeScreen extends StatelessWidget {
         widget = BottomNav(screens: screens);
         break;
       case ScreenSize.medium:
+        widget = TabBarWidget(screens: screens);
+        break;
       case ScreenSize.large:
         widget = NavRail(screens: screens);
         break;
