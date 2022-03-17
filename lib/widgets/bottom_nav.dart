@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:nav_rail_bottom_nav_reponsive/widgets/widget_data_provider.dart';
 
 class BottomNav extends StatefulWidget {
+  final List<Widget> screens;
 
-  final List<Widget> screens ;
   const BottomNav({Key? key, required this.screens}) : super(key: key);
 
   @override
@@ -10,18 +11,16 @@ class BottomNav extends StatefulWidget {
 }
 
 class _BottomNavState extends State<BottomNav> {
-
-  int selectedIndex = 0 ;
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "Favorite"),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Setting")
-        ],
+        items: widgetDataProviders
+            .map((item) =>
+                BottomNavigationBarItem(icon: item.icon, label: item.label))
+            .toList(),
         currentIndex: selectedIndex,
         onTap: (int index) {
           setState(() {
@@ -33,5 +32,3 @@ class _BottomNavState extends State<BottomNav> {
     );
   }
 }
-
-

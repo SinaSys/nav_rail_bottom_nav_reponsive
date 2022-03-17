@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nav_rail_bottom_nav_reponsive/widgets/widget_data_provider.dart';
 
 class NavRail extends StatefulWidget {
 
@@ -22,14 +23,10 @@ class _NavRailState extends State<NavRail> {
           NavigationRail(
             labelType: NavigationRailLabelType.all,
             minWidth: 100.0,
-              destinations: const [
-                NavigationRailDestination(
-                    icon: Icon(Icons.person), label: Text("Profile")),
-                NavigationRailDestination(
-                    icon: Icon(Icons.favorite), label: Text("Favorite")),
-                NavigationRailDestination(
-                    icon: Icon(Icons.settings), label: Text("Setting")),
-              ],
+              destinations: widgetDataProviders
+                  .map((item) =>
+                  NavigationRailDestination(icon: item.icon, label: Text(item.label)))
+                  .toList(),
               onDestinationSelected: (int index) {
                 setState(() {
                   selectedIndex = index;
