@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:nav_rail_bottom_nav_reponsive/screen/add_screen.dart';
 import 'package:nav_rail_bottom_nav_reponsive/widgets/widget_data_provider.dart';
 
-class BottomNav extends StatefulWidget {
-  final List<Widget> screens;
-
-  const BottomNav({Key? key, required this.screens}) : super(key: key);
+class BottomNav extends StatefulWidget with AddScreen {
+   BottomNav({Key? key}) : super(key: key);
 
   @override
   State<BottomNav> createState() => _BottomNavState();

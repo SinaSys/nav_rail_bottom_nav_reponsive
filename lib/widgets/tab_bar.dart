@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:nav_rail_bottom_nav_reponsive/screen/add_screen.dart';
 import 'package:nav_rail_bottom_nav_reponsive/widgets/widget_data_provider.dart';
 
-class TabBarWidget extends StatelessWidget {
+class TabBarWidget extends StatelessWidget with AddScreen {
 
-  final List<Widget> screens;
-
-  const TabBarWidget({Key? key, required this.screens}) : super(key: key);
-
+   TabBarWidget({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

@@ -9,14 +9,8 @@ import 'package:nav_rail_bottom_nav_reponsive/widgets/tab_bar.dart';
 
 
 class HomeScreen extends StatelessWidget {
-  
-    final List<Widget> screens = [
-    const ProfileScreen(),
-    const FavoriteScreen(),
-    const SettingScreen()
-  ];
 
-  HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,13 +18,13 @@ class HomeScreen extends StatelessWidget {
     Widget widget;
     switch (getScreenSize(width)) {
       case ScreenSize.small :
-        widget = BottomNav(screens: screens);
+        widget = BottomNav();
         break;
       case ScreenSize.medium:
-        widget = TabBarWidget(screens: screens);
+        widget = TabBarWidget();
         break;
       case ScreenSize.large:
-        widget = NavRail(screens: screens);
+        widget = NavRail();
         break;
     }
     return widget;
